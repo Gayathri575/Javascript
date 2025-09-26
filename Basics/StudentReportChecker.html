@@ -28,7 +28,7 @@
             cursor: pointer;
         }
         th, td {
-            border: 3px solid #ddd;
+            border: px solid #ddd;
             padding: 8px;
             text-align: left;
         }
@@ -54,6 +54,29 @@
             <th>scores</th>
             <th>city</th>
         </tr>
+        </table>
+        <script>
+            let data = [
+    {name:"Gayathiri", age:20, isGraduate:true, scores:[60,70,80], city:"New York"},
+    {name:"Aman", age:17, isGraduate:false, scores:[45,55,60], city:"Los Angeles"},
+    {name:"Riya", age:19, isGraduate:true, scores:[85,90,88], city:"New York"}
+];
+
+let table = document.querySelector("table");
+
+data.forEach(student => {
+    let tr = document.createElement("tr");
+    tr.innerHTML = `
+        <td>${student.name}</td>
+        <td>${student.age}</td>
+        <td>${student.isGraduate ? "Graduated" : "Not Graduated"}</td>
+        <td>${student.scores.join(", ")}</td>
+        <td>${student.city}</td>
+    `;
+    table.appendChild(tr);
+});
+
+        </script>
 
 </body>
 </html>
